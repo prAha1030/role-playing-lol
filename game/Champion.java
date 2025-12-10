@@ -24,7 +24,11 @@ public abstract class Champion {
         int actualDamage = damage - defence;
         if (actualDamage < 0) {actualDamage = 0;}
         hp -= actualDamage;
-        System.out.println(name + "이(가) " + actualDamage + "의 피해를 받음 (남은 HP: " + hp + ")");
+        if (hp <= 0) {
+            System.out.println(name + "이(가) 사망했습니다!!");
+        } else {
+            System.out.println(name + "이(가) " + actualDamage + "의 피해를 받음 (남은 HP: " + hp + ")");
+        }
     }
     // Q W E R 스킬
     public abstract void useQ(Champion target);
