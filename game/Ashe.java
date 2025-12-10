@@ -34,4 +34,22 @@ public class Ashe {
     public String getName() {
         return this.name;
     }
+
+    // 애쉬 스킬 Q W E R
+    public void useQ(Garen target) {
+        System.out.println(name + "의 더블샷!");
+        target.takeDamage(attackDamage + 15);
+    }
+    public void useW(Garen target) {
+        System.out.println(name + "의 트리플샷!");
+        target.takeDamage(attackDamage + 25);
+    }
+    public void useE(Garen target) {
+        System.out.println(name + "의 코코아 원샷!");
+        target.takeDamage(hp += 20);
+    }
+    public void useR(Garen target) {
+        System.out.println(name + "의 수정화살!");
+        target.takeDamage(attackDamage + 40);
+    }
 }

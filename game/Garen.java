@@ -34,4 +34,22 @@ public class Garen {
     public String getName() {
         return this.name;
     }
+
+    // 가렌 스킬 Q W E R
+    public void useQ(Ashe target) {
+        System.out.println(name + "의 가로베기!");
+        target.takeDamage(attackDamage + 10);
+    }
+    public void useW(Ashe target) {
+        System.out.println(name + "의 세로베기!");
+        target.takeDamage(attackDamage + 15);
+    }
+    public void useE() {
+        System.out.println(name + "의 갑옷 강화!");
+        defence += 20;
+    }
+    public void useR(Ashe target) {
+        System.out.println(name + "의 십자베기!");
+        target.takeDamage(attackDamage + 30);
+    }
 }
