@@ -1,55 +1,40 @@
 package game;
 
-public class Ashe {
-    private String name;
-    private int level;
-    private int hp;
-    private int attackDamage;
-    private int defence;
+public class Ashe extends Champion {
 
     // 애쉬 1렙 설정값
-    public Ashe(String name, int level, int hp, int attackDamage, int defence) {
-        this.name = name;
-        this.level = 1;
-        this.hp = 450;
-        this.attackDamage = 60;
-        this.defence = 35;
+    public Ashe(String name) {
+        super(name, 450, 60, 35);
     }
-
-    // 가렌을 공격
-    public void attackToGaren(Garen target) {
-        System.out.println(name + "-(공격)->" + target.getName());
-        target.takeDamage(attackDamage);
+    // 기본 공격
+    @Override
+    public void attackTo(Champion target) {
+        super.attackTo(target);
     }
-
     // 받은 피해
+    @Override
     public void takeDamage(int damage) {
-        int actualDamage = damage - defence;
-        if (actualDamage < 0) {actualDamage = 0;}
-        hp -= actualDamage;
-        System.out.println(name + "이(가)" + actualDamage + "의 피해를 받음 (남은 HP: " + hp + ")");
+        super.takeDamage(damage);
     }
-
-    // 애쉬 이름 조회
-    public String getName() {
-        return this.name;
-    }
-
     // 애쉬 스킬 Q W E R
-    public void useQ(Garen target) {
-        System.out.println(name + "의 더블샷!");
-        target.takeDamage(attackDamage + 15);
+    @Override
+    public void useQ(Champion target) {
+        System.out.println(getName() + "의 더블샷!");
+        target.takeDamage(getAttackDamage() + 15);
     }
-    public void useW(Garen target) {
-        System.out.println(name + "의 트리플샷!");
-        target.takeDamage(attackDamage + 25);
+    @Override
+    public void useW(Champion target) {
+        System.out.println(getName() + "의 트리플샷!");
+        target.takeDamage(getAttackDamage() + 25);
     }
-    public void useE(Garen target) {
-        System.out.println(name + "의 코코아 원샷!");
-        target.takeDamage(hp += 20);
+    @Override
+    public void useE(Champion target) {
+        System.out.println(getName() + "의 코코아 원샷!");
+        incrHp(20);
     }
-    public void useR(Garen target) {
-        System.out.println(name + "의 수정화살!");
-        target.takeDamage(attackDamage + 40);
+    @Override
+    public void useR(Champion target) {
+        System.out.println(getName() + "의 수정화살!");
+        target.takeDamage(getAttackDamage() + 40);
     }
 }
