@@ -1,7 +1,7 @@
 package game;
 
 public abstract class Champion {
-    private String name;
+    private final String name;
     private int level;
     private int hp;
     private int attackDamage;
@@ -13,6 +13,14 @@ public abstract class Champion {
         this.hp = hp;
         this.attackDamage = attackDamage;
         this.defence = defence;
+        // 기본 체력, 공격력, 방어력
+        if (hp < GameConstants.BASIC_HP) {
+            this.hp = GameConstants.BASIC_HP;
+        } else if (attackDamage < GameConstants.BASIC_ATTACK_DAMAGE) {
+            this.attackDamage = GameConstants.BASIC_ATTACK_DAMAGE;
+        } else if (defence < GameConstants.BASIC_DEFENCE) {
+            this.defence = GameConstants.BASIC_DEFENCE;
+        }
     }
     // 기본 공격
     public void attackTo(Champion target) {
@@ -50,7 +58,14 @@ public abstract class Champion {
         defence += value;
         System.out.println(name + "의 방어력이 증가했습니다 (현재 방어력: " + defence + ")");
     }
-
+    // 레벨업
+    public void levelUP() {
+        if (this.level == GameConstants.MAX_LEVEL) {
+            System.out.println("이미 최고 레벨입니다.");
+        }
+        level++;
+        System.out.println(name + " 레벨업! 현재 레벨: " + level);
+    }
     // 전투 결과 확인
     @Override
     public String toString() {

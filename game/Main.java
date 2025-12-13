@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("==== 소환사의 협곡에 오신 것을 환영합니다. ====");
 
-        Champion garen1 = new Garen("소환사#1");
-        Champion ashe1 = new Ashe("소환사#2");
+        Champion garen1 = new Garen("가렌좋아");
+        Champion ashe1 = new Ashe("나는애쉬");
 
         System.out.println("=== 전투 시작 ===");
 
