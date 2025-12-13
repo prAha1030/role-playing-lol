@@ -21,20 +21,24 @@ public class Ashe extends Champion {
     public void useQ(Champion target) {
         System.out.println(getName() + "의 더블샷!");
         target.takeDamage(getAttackDamage() + 15);
+        plusBattleCount();
     }
     @Override
     public void useW(Champion target) {
         System.out.println(getName() + "의 트리플샷!");
         target.takeDamage(getAttackDamage() + 25);
+        plusBattleCount();
     }
     @Override
     public void useE(Champion target) {
         System.out.println(getName() + "의 코코아 원샷!");
         incrHp(20);
+        plusBattleCount();
     }
     @Override
     public void useR(Champion target) {
         System.out.println(getName() + "의 수정화살!");
         target.takeDamage(getAttackDamage() + 40);
+        plusBattleCount();
     }
 }

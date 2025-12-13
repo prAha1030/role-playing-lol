@@ -11,15 +11,16 @@ public class Main {
 
         ashe1.attackTo(garen1);
         garen1.attackTo(ashe1);
-
         ashe1.useQ(garen1);
         garen1.useQ(ashe1);
+        ashe1.useW(garen1);
         garen1.useW(ashe1);
         ashe1.useE(ashe1);
         garen1.useE(garen1);
         ashe1.useR(garen1);
         garen1.useR(ashe1);
 
+        System.out.println("전투 횟수 : " + garen1.getBattleCount());
         System.out.println("=== 전투 종료 ===");
         System.out.println("=== 전투 결과 ===");
 

@@ -21,20 +21,24 @@ public class Garen extends Champion {
     public void useQ(Champion target) {
         System.out.println(getName() + "의 가로베기!");
         target.takeDamage(getAttackDamage() + 10);
+        plusBattleCount();
     }
     @Override
     public void useW(Champion target) {
         System.out.println(getName() + "의 세로베기!");
         target.takeDamage(getAttackDamage() + 15);
+        plusBattleCount();
     }
     @Override
     public void useE(Champion target) {
         System.out.println(getName() + "의 갑옷 강화!");
         incrDefence(20);
+        plusBattleCount();
     }
     @Override
     public void useR(Champion target) {
         System.out.println(getName() + "의 십자베기!");
         target.takeDamage(getAttackDamage() + 30);
+        plusBattleCount();
     }
 }
