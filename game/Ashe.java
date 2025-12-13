@@ -2,9 +2,9 @@ package game;
 
 public class Ashe extends Champion {
 
-    // 애쉬 1렙 설정값
+    // 애쉬 소환
     public Ashe(String name) {
-        super(name, 450, 60, 35);
+        super(name);
     }
     // 기본 공격
     @Override
@@ -15,6 +15,12 @@ public class Ashe extends Champion {
     @Override
     public void takeDamage(int damage) {
         super.takeDamage(damage);
+    }
+    // 애쉬 패시브 스킬
+    @Override
+    public void passive() {
+        System.out.println(getName() + "의 예리한 눈빛 활성화");
+        incrAttackDamage(20);
     }
     // 애쉬 스킬 Q W E R
     @Override

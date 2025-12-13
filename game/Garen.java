@@ -2,9 +2,9 @@ package game;
 
 public class Garen extends Champion {
 
-    // 가렌 1렙 설정값
+    // 가렌 소환
     public Garen(String name) {
-        super(name, 600, 50, 40);
+        super(name);
     }
     // 기본 공격
     @Override
@@ -15,6 +15,13 @@ public class Garen extends Champion {
     @Override
     public void takeDamage(int damage) {
         super.takeDamage(damage);
+    }
+    // 가렌 패시브 스킬
+    @Override
+    public void passive() {
+        System.out.println(getName() + "의 강인한 정신 활성화");
+        incrHp(100);
+        incrDefence(10);
     }
     // 가렌 스킬 Q W E R
     @Override
