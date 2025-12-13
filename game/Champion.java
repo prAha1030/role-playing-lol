@@ -1,6 +1,15 @@
 package game;
 
 public abstract class Champion {
+    // 전투 횟수 카운팅
+    private static int battleCount = 0;
+    public int getBattleCount() {
+        return battleCount;
+    }
+    public void plusBattleCount() {
+        battleCount++;
+    }
+
     private final String name;
     private int level;
     private int hp;
@@ -26,6 +35,7 @@ public abstract class Champion {
     public void attackTo(Champion target) {
         System.out.println(name + "의 기본 공격.");
         target.takeDamage(attackDamage);
+        battleCount++;
     }
     // 받은 피해
     public void takeDamage(int damage) {
