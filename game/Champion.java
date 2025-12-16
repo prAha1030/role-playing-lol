@@ -51,6 +51,9 @@ public abstract class Champion {
     public String getName() {
         return name;
     }
+    public int getHp() {
+        return hp;
+    }
     public int getAttackDamage() {
         return attackDamage;
     }
