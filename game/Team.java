@@ -19,4 +19,7 @@ public class Team<T extends Champion> {
     public int getTotalHp() {
         return members.stream().mapToInt(Champion::getHp).sum();
     }
+    public List<T> getMembers() {
+        return members;
+    }
 }
