@@ -23,6 +23,10 @@ public class Main {
         // 승리 기준 팀 전체 체력이 0이 될 경우
         System.out.println("블루팀 전체 체력: " + blue.getTotalHp());
         System.out.println("레드팀 전체 체력: " + red.getTotalHp());
+        // 1:1 랜덤전
+        Battle.oneVsOne(blue, red);
+        System.out.println("블루팀 전체 체력: " + blue.getTotalHp());
+        System.out.println("레드팀 전체 체력: " + red.getTotalHp());
 
         // 개인전 모의전투
 //        Champion garen1 = new Garen("가렌좋아");
