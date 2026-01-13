@@ -6,7 +6,7 @@ public class Ashe extends Champion {
     public Ashe(String name) {
         super(name);
     }
-    // 기본 공격
+    // 기본 공격 dddd
     @Override
     public void attackTo(Champion target) {
         super.attackTo(target);
