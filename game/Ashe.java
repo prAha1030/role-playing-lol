@@ -2,7 +2,7 @@ package game;
 
 public class Ashe extends Champion {
 
-    // 애쉬 소환
+    // 애쉬 소환 dddd
     public Ashe(String name) {
         super(name);
     }
